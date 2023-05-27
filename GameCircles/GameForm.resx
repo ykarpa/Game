@@ -1,0 +1,267 @@
+﻿<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="scoreLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="scoreLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 12pt</value>
+  </data>
+  <data name="scoreLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>50, 24</value>
+  </data>
+  <data name="scoreLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>161, 22</value>
+  </data>
+  <data name="scoreLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="scoreLabel.Text" xml:space="preserve">
+    <value>Кількість очків: 0</value>
+  </data>
+  <data name="&gt;&gt;scoreLabel.Name" xml:space="preserve">
+    <value>scoreLabel</value>
+  </data>
+  <data name="&gt;&gt;scoreLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;scoreLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;scoreLabel.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="missedLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="missedLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 12pt</value>
+  </data>
+  <data name="missedLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>547, 24</value>
+  </data>
+  <data name="missedLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 22</value>
+  </data>
+  <data name="missedLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="missedLabel.Text" xml:space="preserve">
+    <value>Пропущені: 0</value>
+  </data>
+  <data name="&gt;&gt;missedLabel.Name" xml:space="preserve">
+    <value>missedLabel</value>
+  </data>
+  <data name="&gt;&gt;missedLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;missedLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;missedLabel.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="recordLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="recordLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 12pt</value>
+  </data>
+  <data name="recordLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>268, 24</value>
+  </data>
+  <data name="recordLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>214, 22</value>
+  </data>
+  <data name="recordLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="recordLabel.Text" xml:space="preserve">
+    <value>Найкращий результат: 0</value>
+  </data>
+  <data name="&gt;&gt;recordLabel.Name" xml:space="preserve">
+    <value>recordLabel</value>
+  </data>
+  <data name="&gt;&gt;recordLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;recordLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;recordLabel.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="game_Panel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="game_Panel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 47</value>
+  </data>
+  <data name="game_Panel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1208, 744</value>
+  </data>
+  <data name="game_Panel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;game_Panel.Name" xml:space="preserve">
+    <value>game_Panel</value>
+  </data>
+  <data name="&gt;&gt;game_Panel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;game_Panel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;game_Panel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <metadata name="ballTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="continueButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 12pt</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="continueButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="continueButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>841, 21</value>
+  </data>
+  <data name="continueButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>124, 29</value>
+  </data>
+  <data name="continueButton.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="continueButton.Text" xml:space="preserve">
+    <value>Продовжити</value>
+  </data>
+  <data name="&gt;&gt;continueButton.Name" xml:space="preserve">
+    <value>continueButton</value>
+  </data>
+  <data name="&gt;&gt;continueButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;continueButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;continueButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="stopButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 12pt</value>
+  </data>
+  <data name="stopButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="stopButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>707, 21</value>
+  </data>
+  <data name="stopButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>95, 29</value>
+  </data>
+  <data name="stopButton.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="stopButton.Text" xml:space="preserve">
+    <value>Пауза</value>
+  </data>
+  <data name="&gt;&gt;stopButton.Name" xml:space="preserve">
+    <value>stopButton</value>
+  </data>
+  <data name="&gt;&gt;stopButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;stopButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;stopButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>8, 20</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>1232, 803</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Іграшка</value>
+  </data>
+  <data name="&gt;&gt;ballTimer.Name" xml:space="preserve">
+    <value>ballTimer</value>
+  </data>
+  <data name="&gt;&gt;ballTimer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Timer, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>GameForm</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+</root>
