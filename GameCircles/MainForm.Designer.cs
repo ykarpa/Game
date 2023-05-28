@@ -30,6 +30,7 @@
         {
             this.StartButton = new System.Windows.Forms.Button();
             this.HowToPlayButton = new System.Windows.Forms.Button();
+            this.ExitButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // StartButton
@@ -54,11 +55,23 @@
             this.HowToPlayButton.UseVisualStyleBackColor = true;
             this.HowToPlayButton.Click += new System.EventHandler(this.HowToPlayButton_Click);
             // 
+            // ExitButton
+            // 
+            this.ExitButton.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ExitButton.Location = new System.Drawing.Point(525, 481);
+            this.ExitButton.Name = "ExitButton";
+            this.ExitButton.Size = new System.Drawing.Size(200, 64);
+            this.ExitButton.TabIndex = 2;
+            this.ExitButton.Text = "Вийти";
+            this.ExitButton.UseVisualStyleBackColor = true;
+            this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1232, 803);
+            this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.HowToPlayButton);
             this.Controls.Add(this.StartButton);
             this.MaximizeBox = false;
@@ -74,5 +87,6 @@
 
         private Button StartButton;
         private Button HowToPlayButton;
+        private Button ExitButton;
     }
 }
