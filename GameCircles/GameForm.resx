@@ -87,7 +87,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;scoreLabel.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="missedLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -96,7 +96,7 @@
     <value>Times New Roman, 12pt</value>
   </data>
   <data name="missedLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>547, 24</value>
+    <value>490, 24</value>
   </data>
   <data name="missedLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>125, 22</value>
@@ -117,7 +117,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;missedLabel.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="recordLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -126,7 +126,7 @@
     <value>Times New Roman, 12pt</value>
   </data>
   <data name="recordLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>268, 24</value>
+    <value>237, 24</value>
   </data>
   <data name="recordLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>214, 22</value>
@@ -147,94 +147,121 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;recordLabel.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
-  <data name="game_Panel.AutoSize" type="System.Boolean, mscorlib">
+  <data name="gamePanel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="game_Panel.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="gamePanel.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 47</value>
   </data>
-  <data name="game_Panel.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="gamePanel.Size" type="System.Drawing.Size, System.Drawing">
     <value>1208, 744</value>
   </data>
-  <data name="game_Panel.TabIndex" type="System.Int32, mscorlib">
+  <data name="gamePanel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;game_Panel.Name" xml:space="preserve">
-    <value>game_Panel</value>
+  <data name="&gt;&gt;gamePanel.Name" xml:space="preserve">
+    <value>gamePanel</value>
   </data>
-  <data name="&gt;&gt;game_Panel.Type" xml:space="preserve">
+  <data name="&gt;&gt;gamePanel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;game_Panel.Parent" xml:space="preserve">
+  <data name="&gt;&gt;gamePanel.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;game_Panel.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="&gt;&gt;gamePanel.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <metadata name="ballTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <data name="continueButton.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="pausedButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 12pt</value>
+  </data>
+  <data name="pausedButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>643, 17</value>
+  </data>
+  <data name="pausedButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>140, 29</value>
+  </data>
+  <data name="pausedButton.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="pausedButton.Text" xml:space="preserve">
+    <value>Пауза</value>
+  </data>
+  <data name="&gt;&gt;pausedButton.Name" xml:space="preserve">
+    <value>pausedButton</value>
+  </data>
+  <data name="&gt;&gt;pausedButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pausedButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pausedButton.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="endButton.Font" type="System.Drawing.Font, System.Drawing">
     <value>Times New Roman, 12pt</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="continueButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="endButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="continueButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>841, 21</value>
+  <data name="endButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>811, 17</value>
   </data>
-  <data name="continueButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>124, 29</value>
+  <data name="endButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>140, 29</value>
   </data>
-  <data name="continueButton.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+  <data name="endButton.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
   </data>
-  <data name="continueButton.Text" xml:space="preserve">
-    <value>Продовжити</value>
+  <data name="endButton.Text" xml:space="preserve">
+    <value>Завершити</value>
   </data>
-  <data name="&gt;&gt;continueButton.Name" xml:space="preserve">
-    <value>continueButton</value>
+  <data name="&gt;&gt;endButton.Name" xml:space="preserve">
+    <value>endButton</value>
   </data>
-  <data name="&gt;&gt;continueButton.Type" xml:space="preserve">
+  <data name="&gt;&gt;endButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;continueButton.Parent" xml:space="preserve">
+  <data name="&gt;&gt;endButton.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;continueButton.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;endButton.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="stopButton.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="restartButton.Font" type="System.Drawing.Font, System.Drawing">
     <value>Times New Roman, 12pt</value>
   </data>
-  <data name="stopButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="restartButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="stopButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>707, 21</value>
+  <data name="restartButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>979, 17</value>
   </data>
-  <data name="stopButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>95, 29</value>
+  <data name="restartButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>161, 29</value>
   </data>
-  <data name="stopButton.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+  <data name="restartButton.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
   </data>
-  <data name="stopButton.Text" xml:space="preserve">
-    <value>Пауза</value>
+  <data name="restartButton.Text" xml:space="preserve">
+    <value>Почати заново</value>
   </data>
-  <data name="&gt;&gt;stopButton.Name" xml:space="preserve">
-    <value>stopButton</value>
+  <data name="&gt;&gt;restartButton.Name" xml:space="preserve">
+    <value>restartButton</value>
   </data>
-  <data name="&gt;&gt;stopButton.Type" xml:space="preserve">
+  <data name="&gt;&gt;restartButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;stopButton.Parent" xml:space="preserve">
+  <data name="&gt;&gt;restartButton.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;stopButton.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;restartButton.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

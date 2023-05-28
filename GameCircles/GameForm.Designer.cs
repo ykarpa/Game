@@ -33,10 +33,11 @@
             this.scoreLabel = new System.Windows.Forms.Label();
             this.missedLabel = new System.Windows.Forms.Label();
             this.recordLabel = new System.Windows.Forms.Label();
-            this.game_Panel = new System.Windows.Forms.Panel();
+            this.gamePanel = new System.Windows.Forms.Panel();
             this.ballTimer = new System.Windows.Forms.Timer(this.components);
-            this.stopButton = new System.Windows.Forms.Button();
-            this.continueButton = new System.Windows.Forms.Button();
+            this.pausedButton = new System.Windows.Forms.Button();
+            this.endButton = new System.Windows.Forms.Button();
+            this.restartButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // scoreLabel
@@ -54,43 +55,54 @@
             resources.ApplyResources(this.recordLabel, "recordLabel");
             this.recordLabel.Name = "recordLabel";
             // 
-            // game_Panel
+            // gamePanel
             // 
-            resources.ApplyResources(this.game_Panel, "game_Panel");
-            this.game_Panel.Name = "game_Panel";
+            resources.ApplyResources(this.gamePanel, "gamePanel");
+            this.gamePanel.Name = "gamePanel";
             // 
             // ballTimer
             // 
             this.ballTimer.Interval = 1000;
             this.ballTimer.Tick += new System.EventHandler(this.ballTimer_Tick);
             // 
-            // StopButton
+            // pausedButton
             // 
-            this.stopButton.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.stopButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDark;
-            this.stopButton.FlatAppearance.BorderSize = 0;
-            resources.ApplyResources(this.stopButton, "stopButton");
-            this.stopButton.Name = "stopButton";
-            this.stopButton.UseVisualStyleBackColor = false;
-            this.stopButton.Click += new System.EventHandler(this.StopButton_Click);
+            this.pausedButton.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.pausedButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDark;
+            this.pausedButton.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.pausedButton, "pausedButton");
+            this.pausedButton.Name = "pausedButton";
+            this.pausedButton.UseVisualStyleBackColor = false;
+            this.pausedButton.Click += new System.EventHandler(this.StopButton_Click);
             // 
-            // continueButton
+            // endButton
             // 
-            this.continueButton.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.continueButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDark;
-            this.continueButton.FlatAppearance.BorderSize = 0;
-            resources.ApplyResources(this.continueButton, "continueButton");
-            this.continueButton.Name = "continueButton";
-            this.continueButton.UseVisualStyleBackColor = false;
-            this.continueButton.Click += new System.EventHandler(this.ContinueButton_Click);
+            this.endButton.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.endButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDark;
+            this.endButton.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.endButton, "endButton");
+            this.endButton.Name = "endButton";
+            this.endButton.UseVisualStyleBackColor = false;
+            this.endButton.Click += new System.EventHandler(this.endButton_Click);
+            // 
+            // restartButton
+            // 
+            this.restartButton.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.restartButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDark;
+            this.restartButton.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.restartButton, "restartButton");
+            this.restartButton.Name = "restartButton";
+            this.restartButton.UseVisualStyleBackColor = false;
+            this.restartButton.Click += new System.EventHandler(this.restartButton_Click);
             // 
             // GameForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.continueButton);
-            this.Controls.Add(this.stopButton);
-            this.Controls.Add(this.game_Panel);
+            this.Controls.Add(this.restartButton);
+            this.Controls.Add(this.endButton);
+            this.Controls.Add(this.pausedButton);
+            this.Controls.Add(this.gamePanel);
             this.Controls.Add(this.recordLabel);
             this.Controls.Add(this.missedLabel);
             this.Controls.Add(this.scoreLabel);
@@ -107,9 +119,10 @@
         private Label scoreLabel;
         private Label missedLabel;
         private Label recordLabel;
-        private Panel game_Panel;
+        private Panel gamePanel;
         private System.Windows.Forms.Timer ballTimer;
-        private Button stopButton;
-        private Button continueButton;
+        private Button pausedButton;
+        private Button endButton;
+        private Button restartButton;
     }
 }
