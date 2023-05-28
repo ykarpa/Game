@@ -90,22 +90,15 @@ namespace GameCircles
             gamePanel.Controls.Remove(circle);
             ballTimer.Interval = (ballTimer.Interval <= 300) ? 300 : ballTimer.Interval - 20;
 
-            if (circle.BackColor == Color.Yellow)
-                score += 5;
-            if (circle.BackColor == Color.Green)
-                score -= 10;
-            if (circle.BackColor == Color.Blue)
-                score += 1;
-            if (circle.BackColor == Color.Red)
-                score += 10;
+            Color[] colors = { Color.Red, Color.Green, Color.Blue, Color.Yellow };
+            int[] points = { 10, -10, 0, 5 };
+
+            score += points[Array.IndexOf(colors, circle.BackColor)];
 
             Record(score);
             UpdateScoreLabel();
 
-            if (score < 0) 
-            {
-                EndGame();
-            }
+            if (score < 0) EndGame();
         }
 
         private void Record(int score)
@@ -117,17 +110,17 @@ namespace GameCircles
 
         private void UpdateScoreLabel()
         {
-            scoreLabel.Text = "Кількість очків: " + score.ToString();
+            scoreLabel.Text = $"Кількість очків: {score}";
         }
 
         private void UpdateMissedBallsLabel()
         {
-            missedLabel.Text = "Пропущені: " + missedBalls.ToString();
+            missedLabel.Text = $"Пропущені: {missedBalls}";
         }
 
         private void UpdateMaxScoreLabel()
         {
-            recordLabel.Text = "Найкращий результат: " + maxScore.ToString();
+            recordLabel.Text = $"Найкращий результат: {maxScore}";
         }
 
         private void EndGame()
@@ -136,6 +129,7 @@ namespace GameCircles
             if (removeTimer != null)
                 removeTimer.Enabled = false;
             pausedButton.Enabled = false;
+            gamePanel.Enabled = false;
 
             ShowResultDialog();
         }
@@ -151,12 +145,8 @@ namespace GameCircles
             if (removeTimer != null)
                 removeTimer.Start();
 
-            pausedButton.Enabled = true;
-            endButton.Enabled = true;
-
-            score = 0;
-            maxScore = 0;
-            missedBalls = 0;
+            pausedButton.Enabled = endButton.Enabled = true;
+            score = maxScore = missedBalls = 0;
 
             UpdateScoreLabel();
             UpdateMaxScoreLabel();
@@ -226,8 +216,7 @@ namespace GameCircles
                 isPaused = true;
                 pausedButton.Text = "Продовжити";
                 ballTimer.Stop();
-                if (removeTimer != null)
-                    removeTimer.Stop();
+                removeTimer?.Stop();
                 gamePanel.Enabled = false;
             }
             else
@@ -235,8 +224,7 @@ namespace GameCircles
                 isPaused = false;
                 pausedButton.Text = "Пауза";
                 ballTimer.Start();
-                if (removeTimer != null)
-                    removeTimer.Start();
+                removeTimer?.Start();
                 gamePanel.Enabled = true;
             }
         }
@@ -250,6 +238,15 @@ namespace GameCircles
         private void restartButton_Click(object sender, EventArgs e)
         {
             RestartGame();
+        }
+
+        private void BackButton_Click(object sender, EventArgs e)
+        {
+            ballTimer.Stop();
+            removeTimer?.Stop();
+            gamePanel.Controls.Clear();
+
+            this.Close();
         }
     }
 }

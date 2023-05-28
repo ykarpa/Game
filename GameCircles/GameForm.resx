@@ -87,7 +87,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;scoreLabel.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="missedLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -117,7 +117,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;missedLabel.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="recordLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -147,7 +147,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;recordLabel.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="gamePanel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -171,7 +171,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;gamePanel.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <metadata name="ballTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
@@ -201,7 +201,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pausedButton.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="endButton.Font" type="System.Drawing.Font, System.Drawing">
     <value>Times New Roman, 12pt</value>
@@ -232,7 +232,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;endButton.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="restartButton.Font" type="System.Drawing.Font, System.Drawing">
     <value>Times New Roman, 12pt</value>
@@ -262,6 +262,48 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;restartButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="BackButton.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="BackButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAcCAYAAAAAwr0iAAAABGdBTUEAALGPC/xhBQAAAtZJREFUSEu9
+        lruPUkEUh5fH8n4GCCzLIgsIklBAAURDDMWGBN1EC2m3tVoTe2P4ByxttbC01sJC220sNBYaNfEVjYnG
+        R3YTTVbxmyuXvcNcFlbAL5n85g4zc885c+Zclo5KOBy+ZbFYftPtO53Oj7VaLfH3l/+A2+1+jvRHW7vd
+        9qKLxeFwPEOUl4vm8/keoIvD4/G8QKSXcgy/9L7Vav2OLgY8f4pIL19dXT2LAeKlujGLMcDM81KpdB5d
+        WrgBZLjieSwWO4NqGA3gCHbnmohmnudyOc1zHaMBesOQ/VAodHMmY/BcyfZMJnMOlTAzwNi4sjudTsdJ
+        f3q4Ti8RaaO1tTXl5YJB5ktzzRoJexGdjMvlUjwvFotd9FC63a6DCDX8fv9doqJVyNGGY/fQ8XDmSoWL
+        x+Omnk8inU5vYciwRujN6/U+QlX44TEiTV5fX7+AzkQgEBBeS/uOi4Q0KZVKXRWD8yCZTG4j0v5EVowd
+        QLa+QqRJFJvT6FwgCbcQaf9GoxFAD6DcvkekSSw8ic6FSCRyHRnuTcK/EeMSDH5AJCOq1ercIrG8vPwV
+        Ge6dzWaPi3EJu93+DpGMyOfzppGw2WxfyPaf1IM91n3GgSdcxRuc8War1fINpg2pVCoZZLgv88XNUyEn
+        lEgkEok6KjGpEoqrGAwGbzebzTDPGhy1tDc1xCbGFZioRKJcLp9Ch0wywNhEkdvY2AhSVdvGcfJsEzWH
+        SCiJyQY1VGPUAJ5Nq6CxraysXDE+U4Puo+PBciUS/AnVImE0YNAXWLjCx/giXiNHfvAsrR1t5M4uejhk
+        72tEWlgoFOpjDJBg3gmO8xNdab3eBlGbDMehRILF+4a+qQE60WhUVFdpvaFNB54oFVNvfMx20EOhLIuP
+        m9n66eFFbxFlk3q9HkEnQtZfRkbXHw2+cncQbTFJtMf1LGk/TAlOPET+3YBZ6fV6VhL7G91+Mpm89AfG
+        M2bmyxv4xwAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="BackButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 17</value>
+  </data>
+  <data name="BackButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>42, 34</value>
+  </data>
+  <data name="BackButton.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;BackButton.Name" xml:space="preserve">
+    <value>BackButton</value>
+  </data>
+  <data name="&gt;&gt;BackButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BackButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;BackButton.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

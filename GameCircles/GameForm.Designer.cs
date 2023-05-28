@@ -38,6 +38,7 @@
             this.pausedButton = new System.Windows.Forms.Button();
             this.endButton = new System.Windows.Forms.Button();
             this.restartButton = new System.Windows.Forms.Button();
+            this.BackButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // scoreLabel
@@ -95,10 +96,20 @@
             this.restartButton.UseVisualStyleBackColor = false;
             this.restartButton.Click += new System.EventHandler(this.restartButton_Click);
             // 
+            // BackButton
+            // 
+            this.BackButton.BackColor = System.Drawing.SystemColors.ButtonFace;
+            resources.ApplyResources(this.BackButton, "BackButton");
+            this.BackButton.Name = "BackButton";
+            this.BackButton.UseVisualStyleBackColor = false;
+            this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
+            // 
             // GameForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.Controls.Add(this.BackButton);
             this.Controls.Add(this.restartButton);
             this.Controls.Add(this.endButton);
             this.Controls.Add(this.pausedButton);
@@ -124,5 +135,6 @@
         private Button pausedButton;
         private Button endButton;
         private Button restartButton;
+        private Button BackButton;
     }
 }
