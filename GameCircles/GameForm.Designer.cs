@@ -68,8 +68,8 @@
             // 
             // pausedButton
             // 
-            this.pausedButton.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.pausedButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDark;
+            this.pausedButton.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.pausedButton.FlatAppearance.BorderColor = System.Drawing.Color.DarkSeaGreen;
             this.pausedButton.FlatAppearance.BorderSize = 0;
             resources.ApplyResources(this.pausedButton, "pausedButton");
             this.pausedButton.Name = "pausedButton";
@@ -78,8 +78,8 @@
             // 
             // endButton
             // 
-            this.endButton.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.endButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDark;
+            this.endButton.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.endButton.FlatAppearance.BorderColor = System.Drawing.Color.DarkSeaGreen;
             this.endButton.FlatAppearance.BorderSize = 0;
             resources.ApplyResources(this.endButton, "endButton");
             this.endButton.Name = "endButton";
@@ -88,8 +88,8 @@
             // 
             // restartButton
             // 
-            this.restartButton.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.restartButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDark;
+            this.restartButton.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.restartButton.FlatAppearance.BorderColor = System.Drawing.Color.DarkSeaGreen;
             this.restartButton.FlatAppearance.BorderSize = 0;
             resources.ApplyResources(this.restartButton, "restartButton");
             this.restartButton.Name = "restartButton";
@@ -98,8 +98,9 @@
             // 
             // BackButton
             // 
-            this.BackButton.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.BackButton.BackColor = System.Drawing.Color.AntiqueWhite;
             resources.ApplyResources(this.BackButton, "BackButton");
+            this.BackButton.FlatAppearance.BorderSize = 0;
             this.BackButton.Name = "BackButton";
             this.BackButton.UseVisualStyleBackColor = false;
             this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
@@ -108,7 +109,7 @@
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.BackColor = System.Drawing.Color.AntiqueWhite;
             this.Controls.Add(this.BackButton);
             this.Controls.Add(this.restartButton);
             this.Controls.Add(this.endButton);
@@ -117,6 +118,7 @@
             this.Controls.Add(this.recordLabel);
             this.Controls.Add(this.missedLabel);
             this.Controls.Add(this.scoreLabel);
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "GameForm";

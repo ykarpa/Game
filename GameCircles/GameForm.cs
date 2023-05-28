@@ -64,6 +64,9 @@ namespace GameCircles
 
                 if (missedBalls >= 5)
                 {
+                    ballTimer.Enabled = false;
+                    ballTimer.Stop();
+                    ballTimer.Dispose();
                     EndGame();
                 }
 
@@ -88,20 +91,23 @@ namespace GameCircles
         {
             Circle circle = (Circle)sender;
             gamePanel.Controls.Remove(circle);
-            ballTimer.Interval = (ballTimer.Interval <= 300) ? 300 : ballTimer.Interval - 20;
+            ballTimer.Interval = (ballTimer.Interval <= 400) ? 400 : ballTimer.Interval - 20;
 
             Color[] colors = { Color.Red, Color.Green, Color.Blue, Color.Yellow };
             int[] points = { 10, -10, 0, 5 };
 
             score += points[Array.IndexOf(colors, circle.BackColor)];
 
-            Record(score);
+            MaxScore(score);
             UpdateScoreLabel();
 
-            if (score < 0) EndGame();
+            if (score < 0)
+            {
+                EndGame();
+            }
         }
 
-        private void Record(int score)
+        private void MaxScore(int score)
         {
             if (score > maxScore)
                 maxScore = score;
@@ -125,9 +131,10 @@ namespace GameCircles
 
         private void EndGame()
         {
-            ballTimer.Enabled = false;
-            if (removeTimer != null)
-                removeTimer.Enabled = false;
+            ballTimer.Stop();
+            removeTimer?.Stop();
+            ballTimer.Dispose();
+            removeTimer?.Dispose();
             pausedButton.Enabled = false;
             gamePanel.Enabled = false;
 
@@ -137,13 +144,11 @@ namespace GameCircles
         private void RestartGame()
         {
             ballTimer.Dispose();
-            if (removeTimer != null)
-                removeTimer.Dispose();
+            removeTimer?.Dispose();
             gamePanel.Controls.Clear();
 
             ballTimer.Start();
-            if (removeTimer != null)
-                removeTimer.Start();
+            removeTimer?.Start();
 
             pausedButton.Enabled = endButton.Enabled = true;
             score = maxScore = missedBalls = 0;
@@ -158,6 +163,7 @@ namespace GameCircles
             Form resultForm = new Form();
             resultForm.Text = "Результат гри";
             resultForm.Size = new Size(500, 400);
+            resultForm.BackColor = Color.AntiqueWhite;
             resultForm.MinimizeBox = false;
             resultForm.MaximizeBox = false;
             resultForm.FormBorderStyle = FormBorderStyle.FixedDialog;
@@ -181,14 +187,22 @@ namespace GameCircles
             TextBox nameTextBox = new TextBox();
             nameTextBox.Location = new Point(50 + nameLabel.Width, 98 + resultLabel.Height);
             nameTextBox.Width = 200;
+            nameTextBox.BackColor = Color.LightBlue;
             resultForm.Controls.Add(nameTextBox);
 
             Button mainMenuButton = new Button();
             mainMenuButton.Text = "Головне меню";
             mainMenuButton.Size = new Size(250, 50);
+            mainMenuButton.BackColor = Color.SkyBlue;
             mainMenuButton.Location = new Point(-1, 305);
             mainMenuButton.Click += (sender, e) =>
             {
+                if (nameTextBox.Text != String.Empty)
+                {
+                    Player player = new Player(nameTextBox.Text, maxScore);
+                    SavePlayerData(player);
+                }
+
                 resultForm.Close();
                 this.Close();
             };
@@ -197,9 +211,13 @@ namespace GameCircles
             Button restartButton = new Button();
             restartButton.Text = "Почати заново";
             restartButton.Size = new Size(250, 50);
+            restartButton.BackColor = Color.SkyBlue;
             restartButton.Location = new Point(247, 305);
             restartButton.Click += (sender, e) =>
             {
+                Player player = new Player(nameTextBox.Text, maxScore);
+                SavePlayerData(player);
+
                 resultForm.Close();
                 RestartGame();
 
@@ -247,6 +265,27 @@ namespace GameCircles
             gamePanel.Controls.Clear();
 
             this.Close();
+        }
+
+        private void SavePlayerData(Player player)
+        {
+            string fileName = "player_data.txt";
+
+            string data = player + ", " + DateTime.Now.ToString();
+
+            try
+            {
+                using (StreamWriter writer = File.AppendText(fileName))
+                {
+                    writer.WriteLine(data);
+                }
+
+                Console.WriteLine("Дані успішно записані у файл.");
+            }
+            catch (IOException e)
+            {
+                Console.WriteLine("Помилка при записі даних у файл: " + e.Message);
+            }
         }
     }
 }

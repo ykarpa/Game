@@ -40,6 +40,7 @@ namespace GameCircles
             Form howToPlayForm = new Form();
             howToPlayForm.Text = "Як грати";
             howToPlayForm.Size = new Size(500, 500);
+            howToPlayForm.BackColor = Color.LemonChiffon;
             howToPlayForm.FormBorderStyle = FormBorderStyle.FixedSingle;
             howToPlayForm.MaximizeBox = false;
             howToPlayForm.MinimizeBox = false;
@@ -57,6 +58,7 @@ namespace GameCircles
             Button okButton = new Button();
             okButton.Text = "Зрозуміло";
             okButton.Size = new Size(500, 50);
+            okButton.BackColor = Color.SkyBlue;
             okButton.Location = new Point(-2, 405);
             okButton.Click += (sender, e) =>
             {
@@ -65,6 +67,14 @@ namespace GameCircles
             howToPlayForm.Controls.Add(okButton);
 
             howToPlayForm.ShowDialog();
+        }
+
+        private void PlayerRatingButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            RatingForm ratingForm = new RatingForm();
+            ratingForm.ShowDialog();
+            this.Show();
         }
     }
 }
