@@ -62,7 +62,7 @@ namespace GameCircles
                     UpdateMissedBallsLabel();
                 }
 
-                if (missedBalls >= 5)
+                if (missedBalls == 5)
                 {
                     ballTimer.Enabled = false;
                     ballTimer.Stop();
@@ -150,7 +150,7 @@ namespace GameCircles
             ballTimer.Start();
             removeTimer?.Start();
 
-            pausedButton.Enabled = endButton.Enabled = true;
+            pausedButton.Enabled = endButton.Enabled = gamePanel.Enabled = true;
             score = maxScore = missedBalls = 0;
 
             UpdateScoreLabel();
