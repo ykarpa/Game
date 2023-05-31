@@ -25,7 +25,7 @@ namespace GameCircles
         }
         private void DisplayTopPlayers(int count)
         {
-            var topPlayers = players.OrderByDescending(p => p.Score).Take(count);
+            //var topPlayers = players.OrderByDescending(p => p.Score).Take(count);
             ratingPanel?.Controls.Clear();
             topNLabel?.Controls.Clear();
 
@@ -40,13 +40,33 @@ namespace GameCircles
                 Margin = new Padding(5),
                 Location = new Point(20, 0),
             };
+            Dictionary<string, Player> uniquePlayers = new Dictionary<string, Player>();
+            foreach (Player player in players)
+            {
+                if (uniquePlayers.ContainsKey(player.Name))
+                {
+                    if (player.Score > uniquePlayers[player.Name].Score)
+                    {
+                        // Оновити гравця з більшим рахунком
+                        uniquePlayers[player.Name] = player;
+                    }
+                }
+                else
+                {
+                    // Додати гравця з унікальним іменем
+                    uniquePlayers.Add(player.Name, player);
+                }
+            }
+            var topPlayers = uniquePlayers.OrderByDescending(p => p.Value.Score).Take(count);
+
             foreach (var player in topPlayers)
             {
-                string playerInfo = $"{position}. {player.Name} - {player.Score}\n";
-                label.Text += playerInfo;                
+                string playerInfo = $"{position}. {player.Value.Name} - {player.Value.Score}\n";
+                label.Text += playerInfo;
                 position++;
             }
-            ratingPanel.Controls.Add(label);
+
+            ratingPanel?.Controls.Add(label);
         }
 
         private List<Player> LoadPlayersData()
@@ -81,12 +101,12 @@ namespace GameCircles
             return players;
         }
 
-        private void comboBox_KeyPress(object sender, KeyPressEventArgs e)
+        private void ComboBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = true;
         }
 
-        private void comboBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void ComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             ComboBox comboBox = (ComboBox)sender;
             string selectedValue = comboBox.SelectedItem?.ToString();

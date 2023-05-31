@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Media;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,7 +22,7 @@ namespace GameCircles
         private int missedBalls = 0;
         private bool isPaused = false;
 
-        private DateTime startTime;
+        //private DateTime startTime;
 
         public GameForm()
         {
@@ -30,33 +31,62 @@ namespace GameCircles
         }
 
         private void GameForm_Load(object sender, EventArgs e)
-        { 
-            ballTimer.Start();
+        {
+            shapeTimer.Start();
         }
 
-        private void ballTimer_Tick(object sender, EventArgs e)
+        private void ShapeTimer_Tick(object sender, EventArgs e)
         {
-            Circle circle = new Circle();
-            circle.Size = new Size(50, 50);
-            circle.BackColor = GetRandomColor();
-            circle.Location = GetRandomLocation();
-            circle.Click += circle_Click;
+            //Shape shape = GenerateCircle();
 
-            gamePanel.Controls.Add(circle);
+            Shape circle = new Circle();
+            Shape star = new Star();
+            Shape[] shapes = { circle, star };
+
+            Shape shape = shapes[random.Next(0, shapes.Length)];
+
+            shape.Size = (shape is Star) ? new Size(65, 65) : new Size(50, 50);
+            shape.BackColor = GetRandomColor();
+            shape.Location = GetRandomLocation();
+            shape.Click += Shape_Click;
+
+            gamePanel.Controls.Add(shape);
 
             removeTimer = new Timer();
             removeTimer.Interval = 1500;
-            removeTimer.Tick += (sender, e) => remove(sender, circle);
+            removeTimer.Tick += (sender, e) => Remove(sender, shape);
             removeTimer.Start();
         }
 
-        private void remove(object sender,  Circle circle)
+        private Shape GenerateCircle(int size = 0)
+        {
+            Shape circle = new Circle();
+            circle.BackColor = GetRandomColor();
+            circle.Location = GetRandomLocation();
+            circle.Size = (size == 0) ? (new Size(50, 50)) : GetRandomSize();
+            circle.Click += Shape_Click;
+
+            return circle;
+        }
+
+        private void GenerateStar(int size = 0)
+        {
+            Shape star = new Star();
+            star.BackColor = GetRandomColor();
+            star.Location = GetRandomLocation();
+            star.Size = (size == 0) ? (new Size(65, 65)) : GetRandomSize();
+            star.Click += Shape_Click;
+
+            gamePanel.Controls.Add(star);
+        }
+
+        private void Remove(object sender,  Shape shape)
         {
             (sender as Timer).Stop();
             (sender as Timer).Dispose();
 
-            if (gamePanel.Controls.Contains(circle)) {
-                if (circle.BackColor != Color.Green)
+            if (gamePanel.Controls.Contains(shape)) {
+                if (shape.BackColor != Color.Green)
                 {
                     missedBalls++;
                     UpdateMissedBallsLabel();
@@ -64,13 +94,13 @@ namespace GameCircles
 
                 if (missedBalls == 5)
                 {
-                    ballTimer.Enabled = false;
-                    ballTimer.Stop();
-                    ballTimer.Dispose();
+                    shapeTimer.Enabled = false;
+                    shapeTimer.Stop();
+                    shapeTimer.Dispose();
                     EndGame();
                 }
 
-                gamePanel.Controls.Remove(circle);
+                gamePanel.Controls.Remove(shape);
             }
         }
 
@@ -87,24 +117,40 @@ namespace GameCircles
             return new Point(x, y);
         }
 
-        private void circle_Click(object sender, EventArgs e)
+        private Size GetRandomSize()
         {
-            Circle circle = (Circle)sender;
-            gamePanel.Controls.Remove(circle);
-            ballTimer.Interval = (ballTimer.Interval <= 400) ? 400 : ballTimer.Interval - 20;
+            int width, height;
+            if (this is Circle)
+            {
+                width = height = random.Next(35, 55);
+            }
+            else //if (this is Star)
+            {
+                width = height = random.Next(50, 70);
+            }
+            
+            return new Size(width, height);
+        }
+
+        private void Shape_Click(object sender, EventArgs e)
+        {
+            string soundFilePath = "../../../sounds/ball_hit.wav";
+            SoundPlayer soundPlayer = new SoundPlayer(soundFilePath);
+            soundPlayer.Play();
+
+            Shape shape = (Shape)sender;
+            gamePanel.Controls.Remove(shape);
+            shapeTimer.Interval = (shapeTimer.Interval <= 400) ? 400 : shapeTimer.Interval - 10;
 
             Color[] colors = { Color.Red, Color.Green, Color.Blue, Color.Yellow };
             int[] points = { 10, -10, 0, 5 };
 
-            score += points[Array.IndexOf(colors, circle.BackColor)];
+            score += points[Array.IndexOf(colors, shape.BackColor)];
 
             MaxScore(score);
             UpdateScoreLabel();
 
-            if (score < 0)
-            {
-                EndGame();
-            }
+            if (score < 0) EndGame();
         }
 
         private void MaxScore(int score)
@@ -131,11 +177,13 @@ namespace GameCircles
 
         private void EndGame()
         {
-            ballTimer.Stop();
             removeTimer?.Stop();
-            ballTimer.Dispose();
+            shapeTimer.Stop();
+            shapeTimer.Dispose();
             removeTimer?.Dispose();
+            shapeTimer.Interval = 1000;
             pausedButton.Enabled = false;
+            endButton.Enabled = false;
             gamePanel.Enabled = false;
 
             ShowResultDialog();
@@ -143,11 +191,12 @@ namespace GameCircles
 
         private void RestartGame()
         {
-            ballTimer.Dispose();
+            shapeTimer.Stop();
+            shapeTimer.Dispose();
             removeTimer?.Dispose();
             gamePanel.Controls.Clear();
 
-            ballTimer.Start();
+            shapeTimer.Start();
             removeTimer?.Start();
 
             pausedButton.Enabled = endButton.Enabled = gamePanel.Enabled = true;
@@ -170,7 +219,7 @@ namespace GameCircles
             resultForm.StartPosition = FormStartPosition.CenterScreen;
 
             Label resultLabel = new Label();
-            resultLabel.Text = "Ваш найкращий результат:\n" + score.ToString();
+            resultLabel.Text = "Ваш найкращий результат:\n" + maxScore.ToString();
             resultLabel.TextAlign = ContentAlignment.MiddleCenter;
             resultLabel.AutoSize = true;
             resultLabel.Font = new Font(resultLabel.Font.FontFamily, 12, FontStyle.Bold);
@@ -215,8 +264,11 @@ namespace GameCircles
             restartButton.Location = new Point(247, 305);
             restartButton.Click += (sender, e) =>
             {
-                Player player = new Player(nameTextBox.Text, maxScore);
-                SavePlayerData(player);
+                if (nameTextBox.Text != String.Empty)
+                {
+                    Player player = new Player(nameTextBox.Text, maxScore);
+                    SavePlayerData(player);
+                }
 
                 resultForm.Close();
                 RestartGame();
@@ -233,7 +285,7 @@ namespace GameCircles
             {
                 isPaused = true;
                 pausedButton.Text = "Продовжити";
-                ballTimer.Stop();
+                shapeTimer.Stop();
                 removeTimer?.Stop();
                 gamePanel.Enabled = false;
             }
@@ -241,26 +293,26 @@ namespace GameCircles
             {
                 isPaused = false;
                 pausedButton.Text = "Пауза";
-                ballTimer.Start();
+                shapeTimer.Start();
                 removeTimer?.Start();
                 gamePanel.Enabled = true;
             }
         }
 
-        private void endButton_Click(object sender, EventArgs e)
+        private void EndButton_Click(object sender, EventArgs e)
         {
             endButton.Enabled = false;
             EndGame();
         }
 
-        private void restartButton_Click(object sender, EventArgs e)
+        private void RestartButton_Click(object sender, EventArgs e)
         {
             RestartGame();
         }
 
         private void BackButton_Click(object sender, EventArgs e)
         {
-            ballTimer.Stop();
+            shapeTimer.Stop();
             removeTimer?.Stop();
             gamePanel.Controls.Clear();
 
@@ -286,6 +338,12 @@ namespace GameCircles
             {
                 Console.WriteLine("Помилка при записі даних у файл: " + e.Message);
             }
+        }
+
+        private void GameForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            shapeTimer.Stop();
+            removeTimer?.Stop();
         }
     }
 }
