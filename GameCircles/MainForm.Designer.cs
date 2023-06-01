@@ -32,6 +32,7 @@
             this.HowToPlayButton = new System.Windows.Forms.Button();
             this.ExitButton = new System.Windows.Forms.Button();
             this.PlayerRatingButton = new System.Windows.Forms.Button();
+            this.LevelComboBox = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // StartButton
@@ -82,12 +83,28 @@
             this.PlayerRatingButton.UseVisualStyleBackColor = false;
             this.PlayerRatingButton.Click += new System.EventHandler(this.PlayerRatingButton_Click);
             // 
+            // LevelComboBox
+            // 
+            this.LevelComboBox.BackColor = System.Drawing.SystemColors.Window;
+            this.LevelComboBox.FormattingEnabled = true;
+            this.LevelComboBox.Items.AddRange(new object[] {
+            "Легкий",
+            "Середній",
+            "Важкий"});
+            this.LevelComboBox.Location = new System.Drawing.Point(525, 301);
+            this.LevelComboBox.Name = "LevelComboBox";
+            this.LevelComboBox.Size = new System.Drawing.Size(200, 28);
+            this.LevelComboBox.TabIndex = 4;
+            this.LevelComboBox.Text = "Виберіть рівень складності";
+            this.LevelComboBox.SelectedIndexChanged += new System.EventHandler(this.LevelComboBox_SelectedIndexChanged);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LemonChiffon;
             this.ClientSize = new System.Drawing.Size(1232, 803);
+            this.Controls.Add(this.LevelComboBox);
             this.Controls.Add(this.PlayerRatingButton);
             this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.HowToPlayButton);
@@ -107,5 +124,6 @@
         private Button HowToPlayButton;
         private Button ExitButton;
         private Button PlayerRatingButton;
+        private ComboBox LevelComboBox;
     }
 }

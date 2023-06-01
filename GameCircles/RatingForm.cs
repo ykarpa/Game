@@ -21,11 +21,10 @@ namespace GameCircles
         }
         private void RatingForm_Load(object sender, EventArgs e)
         {
-            
+
         }
         private void DisplayTopPlayers(int count)
         {
-            //var topPlayers = players.OrderByDescending(p => p.Score).Take(count);
             ratingPanel?.Controls.Clear();
             topNLabel?.Controls.Clear();
 
@@ -47,13 +46,11 @@ namespace GameCircles
                 {
                     if (player.Score > uniquePlayers[player.Name].Score)
                     {
-                        // Оновити гравця з більшим рахунком
                         uniquePlayers[player.Name] = player;
                     }
                 }
                 else
                 {
-                    // Додати гравця з унікальним іменем
                     uniquePlayers.Add(player.Name, player);
                 }
             }
@@ -132,8 +129,6 @@ namespace GameCircles
                     DisplayTopPlayers(1000);
                     break;
             }
-
-            comboBox.SelectedItem = null;
         }
     }
 }

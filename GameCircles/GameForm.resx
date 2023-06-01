@@ -319,7 +319,7 @@
     <value>CenterScreen</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Гра "Збий Кульки"</value>
+    <value>Гра "Збий Фігурки"</value>
   </data>
   <data name="&gt;&gt;shapeTimer.Name" xml:space="preserve">
     <value>shapeTimer</value>
