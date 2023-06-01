@@ -58,8 +58,8 @@
             this.comboBox.Size = new System.Drawing.Size(206, 28);
             this.comboBox.TabIndex = 1;
             this.comboBox.Text = "Виберіть топ N гравців";
-            this.comboBox.SelectedIndexChanged += new System.EventHandler(this.comboBox_SelectedIndexChanged);
-            this.comboBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox_KeyPress);
+            this.comboBox.SelectedIndexChanged += new System.EventHandler(this.ComboBox_SelectedIndexChanged);
+            this.comboBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ComboBox_KeyPress);
             // 
             // topNLabel
             // 

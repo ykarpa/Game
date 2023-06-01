@@ -34,7 +34,7 @@
             this.missedLabel = new System.Windows.Forms.Label();
             this.recordLabel = new System.Windows.Forms.Label();
             this.gamePanel = new System.Windows.Forms.Panel();
-            this.ballTimer = new System.Windows.Forms.Timer(this.components);
+            this.shapeTimer = new System.Windows.Forms.Timer(this.components);
             this.pausedButton = new System.Windows.Forms.Button();
             this.endButton = new System.Windows.Forms.Button();
             this.restartButton = new System.Windows.Forms.Button();
@@ -61,10 +61,10 @@
             resources.ApplyResources(this.gamePanel, "gamePanel");
             this.gamePanel.Name = "gamePanel";
             // 
-            // ballTimer
+            // shapeTimer
             // 
-            this.ballTimer.Interval = 1000;
-            this.ballTimer.Tick += new System.EventHandler(this.ballTimer_Tick);
+            this.shapeTimer.Interval = 1000;
+            this.shapeTimer.Tick += new System.EventHandler(this.ShapeTimer_Tick);
             // 
             // pausedButton
             // 
@@ -84,7 +84,7 @@
             resources.ApplyResources(this.endButton, "endButton");
             this.endButton.Name = "endButton";
             this.endButton.UseVisualStyleBackColor = false;
-            this.endButton.Click += new System.EventHandler(this.endButton_Click);
+            this.endButton.Click += new System.EventHandler(this.EndButton_Click);
             // 
             // restartButton
             // 
@@ -94,7 +94,7 @@
             resources.ApplyResources(this.restartButton, "restartButton");
             this.restartButton.Name = "restartButton";
             this.restartButton.UseVisualStyleBackColor = false;
-            this.restartButton.Click += new System.EventHandler(this.restartButton_Click);
+            this.restartButton.Click += new System.EventHandler(this.RestartButton_Click);
             // 
             // BackButton
             // 
@@ -122,6 +122,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "GameForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GameForm_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -133,7 +134,7 @@
         private Label missedLabel;
         private Label recordLabel;
         private Panel gamePanel;
-        private System.Windows.Forms.Timer ballTimer;
+        private System.Windows.Forms.Timer shapeTimer;
         private Button pausedButton;
         private Button endButton;
         private Button restartButton;
