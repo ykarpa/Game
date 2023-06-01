@@ -29,8 +29,6 @@ namespace GameCircles
         private int missedBalls = 0;
         private bool isPaused = false;
 
-        //private DateTime startTime;
-
         public GameForm(Level level)
         {
             InitializeComponent();
@@ -74,38 +72,9 @@ namespace GameCircles
             removeTimer.Start();
         }
 
-        private void EasyGame()
-        {
-            Shape shape = GenerateCircle();
-            removeTimer = new Timer();
-            removeTimer.Interval = 1500;
-            removeTimer.Tick += (sender, e) => Remove(sender, shape);
-            removeTimer.Start();
-
-        }
-
         private void ShapeTimer_Tick(object sender, EventArgs e)
         {
             StartGame(level);
-            //Shape shape = GenerateCircle();
-
-            //Shape circle = new Circle();
-            //Shape star = new Star();
-            //Shape[] shapes = { circle, star };
-
-            //Shape shape = shapes[random.Next(0, shapes.Length)];
-
-            //shape.Size = (shape is Star) ? new Size(65, 65) : new Size(50, 50);
-            //shape.BackColor = GetRandomColor();
-            //shape.Location = GetRandomLocation();
-            //shape.Click += Shape_Click;
-
-            //gamePanel.Controls.Add(shape);
-
-            //removeTimer = new Timer();
-            //removeTimer.Interval = 1500;
-            //removeTimer.Tick += (sender, e) => Remove(sender, shape);
-            //removeTimer.Start();
         }
 
         private Shape GenerateCircle(int size = 0)

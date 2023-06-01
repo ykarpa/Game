@@ -31,14 +31,11 @@ namespace GameCircles
             base.OnResize(e);
             using (var gp = new GraphicsPath())
             {
-                // Визначте координати точок для створення зірки
                 Point[] starPoints = GetStarPoints(5, new Point(Width / 2, Height / 2), Math.Min(Width, Height) / 2);
 
-                // Додайте лінії та точки до графічного шляху
                 gp.AddLines(starPoints);
                 gp.CloseFigure();
 
-                // Застосуйте графічний шлях як область форми
                 this.Region = new Region(gp);
             }
         }
